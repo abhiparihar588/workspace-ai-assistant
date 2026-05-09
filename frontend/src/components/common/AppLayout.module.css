@@ -1,0 +1,86 @@
+/* src/components/common/AppLayout.module.css */
+
+.layout { display: flex; min-height: 100vh; }
+
+/* Sidebar */
+.sidebar {
+  width: 240px;
+  background: var(--bg2);
+  border-right: 1px solid var(--border);
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  left: 0; top: 0; bottom: 0;
+  z-index: 10;
+}
+
+.logo {
+  padding: 1.4rem 1.2rem;
+  border-bottom: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.logoIcon {
+  width: 32px; height: 32px;
+  background: linear-gradient(135deg, var(--accent), var(--green));
+  border-radius: 8px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 15px;
+}
+.logoText {
+  font-family: 'Syne', sans-serif;
+  font-size: 16px; font-weight: 700;
+}
+
+.nav { flex: 1; padding: 1rem 0; overflow-y: auto; }
+.navSection {
+  padding: .4rem 1.2rem;
+  font-size: 10px; font-weight: 600;
+  color: var(--text3);
+  text-transform: uppercase; letter-spacing: .08em;
+  margin-bottom: .25rem;
+}
+.navItem {
+  display: flex; align-items: center; gap: 10px;
+  padding: .65rem 1.2rem;
+  color: var(--text2);
+  border-left: 3px solid transparent;
+  font-size: 13px; font-weight: 500;
+  transition: all .18s;
+  cursor: pointer;
+}
+.navItem:hover { color: var(--text); background: var(--bg3); }
+.navItem.active {
+  color: var(--accent2);
+  background: rgba(108,99,255,.1);
+  border-left-color: var(--accent);
+}
+.navIcon { font-size: 15px; width: 20px; text-align: center; }
+
+.sidebarFooter {
+  padding: 1rem 1.2rem;
+  border-top: 1px solid var(--border);
+}
+.userRow { display: flex; align-items: center; gap: 10px; margin-bottom: .75rem; }
+.avatar {
+  width: 36px; height: 36px; border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-weight: 600; font-size: 13px; color: #fff; flex-shrink: 0;
+}
+.userName { font-size: 13px; font-weight: 500; }
+.userRole { font-size: 11px; color: var(--text3); text-transform: capitalize; }
+.logoutBtn {
+  width: 100%; background: var(--bg3); border: 1px solid var(--border);
+  color: var(--text2); padding: .5rem; border-radius: var(--radius);
+  font-size: 12px; transition: all .2s;
+}
+.logoutBtn:hover { border-color: var(--red); color: var(--red); }
+
+/* Main */
+.main { margin-left: 240px; flex: 1; padding: 2rem; min-height: 100vh; }
+
+@media (max-width: 768px) {
+  .sidebar { width: 200px; }
+  .main { margin-left: 200px; padding: 1rem; }
+}
